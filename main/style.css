@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --darkText: #1f343f;
+  --darker: #93b5c6;
+  --dark: #ff8882;
+  --light: #e4d8dc;
+  --lighter: #ffe3e3;
+}
+
+/*boiler plate over*/
+
+body {
+  font-family: "Roboto";
+  background: var(--darker);
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/*----------MAIN NAV STYLES----------*/
+
+.main_nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 50px;
+  background-color: var(--lighter);
+  z-index: 99;
+}
+
+.main_nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+
+.main_nav ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  border-radius: 100%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light);
+  position: relative;
+  border: 5px solid transparent;
+}
+
+.main_nav ul li.active {
+  transform: translateY(-20px);
+  border: 5px solid var(--darker);
+}
+
+.main_nav ul li.active::before {
+  content: "";
+  width: 15px;
+  height: 10px;
+  position: absolute;
+  right: 40px;
+  border-top-right-radius: 10px;
+  box-shadow: 3px -3px 0px 2px rgba(147, 181, 198, 1);
+}
+
+.main_nav ul li.active::after {
+  content: "";
+  width: 15px;
+  height: 10px;
+  position: absolute;
+  left: 40px;
+  border-top-left-radius: 10px;
+  box-shadow: -3px -3px 0px 2px rgba(147, 181, 198, 1);
+}
+
+.main_nav ul li a {
+  text-decoration: none;
+  color: var(--light);
+  position: absolute;
+  top: 6px;
+  touch-action: none;
+}
+.main_nav ul li a img {
+  filter: invert(18%) sepia(20%) saturate(861%) hue-rotate(156deg)
+    brightness(96%) contrast(97%); /*change the color to match the background*/
+}
+
+/*---------MAIN NAV STYLES OVER-----------*/
+
+/*-------------HOME SECTION---------------*/
+
+.home {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.flippingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28vh;
+  height: 28vh;
+  border-radius: 100%;
+  position: absolute;
+  right: 7vw;
+  top: 30vh;
+  perspective: 600px;
+}
+.home .imgBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+.home .imgBox.active {
+  transform: rotateY(180deg);
+}
+
+.home .imgBox img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  object-fit: cover;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.toggleCallContainer {
+  position: absolute;
+  padding-top: 40%;
+  padding-left: 20%;
+  background-color: var(--light);
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.toggleCallContainer p {
+  width: 90%;
+  font-family: "Dancing Script", cursive;
+  font-size: 2em;
+  color: var(--dark);
+}
+
+.home .presentation {
+  position: relative;
+}
+
+.home .presentation h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 35px;
+  color: var(--dark);
+  position: absolute;
+  top: 10vh;
+  left: 20px;
+}
+
+.home .presentation p {
+  position: absolute;
+  top: 60vh;
+  left: 20px;
+  font-size: 22px;
+  color: white;
+  font-weight: 100;
+}
+
+.square {
+  position: absolute;
+  background-color: var(--dark);
+  width: 70vw;
+  height: 70vw;
+  z-index: -1;
+}
+
+.topSquare {
+  transform: rotate(48deg);
+  top: -10vh;
+  right: -50vw;
+}
+
+.bottomSquare {
+  transform: rotate(27deg);
+  bottom: -10vh;
+  left: -32vw;
+}
+
+/*---------HOME SECTION OVER--------------*/

@@ -15,6 +15,8 @@
 
 /*boiler plate over*/
 
+/*background and animations*/
+
 body {
   font-family: "Roboto";
   background: var(--darker);
@@ -25,6 +27,92 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.container {
+  overflow: hidden;
+  width: 100vw;
+  height: fit-content;
+  position: relative;
+}
+.squareHome {
+  position: absolute;
+  background-color: var(--dark);
+  width: 70vw;
+  height: 70vw;
+  z-index: -1;
+}
+
+.squareHome.topSquare {
+  transform: rotate(48deg);
+  top: -10vh;
+  right: -50vw;
+}
+
+.squareHome.bottomSquare {
+  transform: rotate(27deg);
+  top: 75vh;
+  left: -32vw;
+}
+
+.squarePortfolio {
+  position: absolute;
+  background-color: var(--dark);
+  width: 70vw;
+  height: 70vw;
+  z-index: -1;
+}
+
+.squarePortfolio.topSquare {
+  top: 140vh;
+  transform: rotate(45deg);
+  left: -40vw;
+}
+
+.squarePortfolio.bottomSquare {
+  top: 170vh;
+  transform: rotate(50deg);
+  right: -25vw;
+}
+
+.squareAbout {
+  position: absolute;
+  background-color: var(--dark);
+  width: 70vw;
+  height: 70vw;
+  z-index: -1;
+}
+
+.squareAbout.topSquare {
+  top: 240vh;
+  transform: rotate(45deg);
+  left: -40vw;
+}
+
+.squareAbout.bottomSquare {
+  top: 270vh;
+  transform: rotate(50deg);
+  right: -25vw;
+}
+
+.squareContact {
+  position: absolute;
+  background-color: var(--dark);
+  width: 70vw;
+  height: 70vw;
+  z-index: -1;
+}
+
+.squareContact.topSquare {
+  top: 340vh;
+  transform: rotate(45deg);
+  left: -40vw;
+}
+
+.squareContact.bottomSquare {
+  top: 370vh;
+  transform: rotate(50deg);
+  right: -25vw;
+}
+
 /*----------MAIN NAV STYLES----------*/
 
 .main_nav {
@@ -32,9 +120,9 @@ body::-webkit-scrollbar {
   bottom: 0;
   left: 0;
   width: 100vw;
-  height: 50px;
+  height: 60px;
   background-color: var(--lighter);
-  z-index: 99;
+  z-index: 999;
 }
 
 .main_nav ul {
@@ -58,32 +146,13 @@ body::-webkit-scrollbar {
   justify-content: center;
   background-color: var(--light);
   position: relative;
-  border: 5px solid transparent;
+  border: 5px solid var(--lighter);
+  transition: 0.2s ease-in-out;
 }
 
 .main_nav ul li.active {
   transform: translateY(-20px);
-  border: 5px solid var(--darker);
-}
-
-.main_nav ul li.active::before {
-  content: "";
-  width: 15px;
-  height: 10px;
-  position: absolute;
-  right: 40px;
-  border-top-right-radius: 10px;
-  box-shadow: 3px -3px 0px 2px rgba(147, 181, 198, 1);
-}
-
-.main_nav ul li.active::after {
-  content: "";
-  width: 15px;
-  height: 10px;
-  position: absolute;
-  left: 40px;
-  border-top-left-radius: 10px;
-  box-shadow: -3px -3px 0px 2px rgba(147, 181, 198, 1);
+  border: 5px solid var(--lighter);
 }
 
 .main_nav ul li a {
@@ -165,6 +234,22 @@ body::-webkit-scrollbar {
   color: var(--dark);
 }
 
+.actionCall {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: var(--lighter);
+}
+.actionCall canvas {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+
 .home .presentation {
   position: relative;
 }
@@ -174,7 +259,7 @@ body::-webkit-scrollbar {
   font-size: 35px;
   color: var(--dark);
   position: absolute;
-  top: 10vh;
+  top: 15vh;
   left: 20px;
 }
 
@@ -187,24 +272,177 @@ body::-webkit-scrollbar {
   font-weight: 100;
 }
 
-.square {
+/*---------HOME SECTION OVER--------------*/
+
+/*-----------ABOUT SECTION---------------*/
+
+.about {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.paperContainer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.paper {
+  width: 65%;
+  height: 30%;
+  background-color: var(--light);
+  box-shadow: 0px 3px 5px rgba(31, 52, 63, 0.5);
+}
+.paperOne {
   position: absolute;
-  background-color: var(--dark);
-  width: 70vw;
-  height: 70vw;
+  top: 10%;
+  left: 10%;
+  transform: rotate(25deg);
+}
+
+.paperTwo {
+  position: absolute;
+  top: 30%;
+  right: 5%;
+  transform: rotate(-15deg);
+}
+.paperThree {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: rotate(5deg);
   z-index: -1;
 }
-
-.topSquare {
-  transform: rotate(48deg);
-  top: -10vh;
-  right: -50vw;
+.paperFour {
+  position: absolute;
+  top: 60%;
+  left: -5%;
+  transform: rotate(25deg);
 }
 
-.bottomSquare {
-  transform: rotate(27deg);
-  bottom: -10vh;
-  left: -32vw;
+/*---------ABOUT SECTION OVER-------------*/
+
+/*-----------PORTFOLIO SECTION---------------*/
+
+.portfolio {
+  width: 100vw;
+  height: fit-content;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/*---------HOME SECTION OVER--------------*/
+.projectContainer {
+  width: 100%;
+  height: 130vh;
+  padding-top: 15vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-bottom: 5vw;
+  position: relative;
+  perspective: 50px;
+}
+
+.project {
+  width: 50vw;
+  height: 50vw;
+  position: absolute;
+  background-color: var(--light);
+  box-shadow: 0px 3px 5px rgba(31, 52, 63, 0.5);
+}
+
+.projectTwo {
+  top: 40vw;
+  left: 45%;
+}
+
+.projectThree {
+  top: 75vw;
+}
+.projectFour {
+  top: 110vw;
+  left: 45%;
+}
+.projectFive {
+  top: 145vw;
+}
+.projectSix {
+  top: 180vw;
+  left: 45%;
+}
+
+.project.forwardsLeft {
+  animation-name: foreSwapLeft;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+.project.backwardsRight {
+  animation-name: backSwapRight;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+.project.forwardsRight {
+  animation-name: foreSwapRight;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+.project.backwardsLeft {
+  animation-name: backSwapLeft;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes foreSwapLeft {
+  50% {
+    transform: translateX(-80px) translateZ(5px);
+  }
+  100% {
+    transform: translateX(10px) translateZ(5px);
+    z-index: 150;
+  }
+}
+@keyframes foreSwapRight {
+  50% {
+    transform: translateX(80px) translateZ(5px);
+  }
+  100% {
+    transform: translateX(-10px) translateZ(5px);
+    z-index: 150;
+  }
+}
+@keyframes backSwapLeft {
+  50% {
+    transform: translateX(-60px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes backSwapRight {
+  50% {
+    transform: translateX(60px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+/*---------PORTFOLIO SECTION OVER-------------*/
+
+/*-----------CONTACT SECTION---------------*/
+
+.contact {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/*---------CONTACT SECTION OVER-------------*/

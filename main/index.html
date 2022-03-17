@@ -9,6 +9,20 @@
     <title>Portfolio</title>
 </head>
 <body>
+    <!-- background elements and animation -->
+<div class="container">
+    <div class="squareHome topSquare"> </div>
+    <div class="squareHome bottomSquare"> </div>
+
+    <div class="squarePortfolio topSquare"> </div>
+    <div class="squarePortfolio bottomSquare"> </div>
+
+    <div class="squareAbout topSquare"> </div>
+    <div class="squareAbout bottomSquare"> </div>
+
+    <div class="squareContact topSquare"> </div>
+    <div class="squareContact bottomSquare"> </div>
+
     <!-- navigation -->
     <nav class="main_nav">
         <ul>
@@ -30,8 +44,6 @@
     <main>
         <section id="home" class="home">
 
-            <div class="square topSquare"> </div>
-
             <div class="presentation">
                 <h1>Lucas Beaufils</h1>
                 <p>Web Developer</p>
@@ -49,21 +61,35 @@
                         <p>Contactame!</p>
                     </div>
                 </div>
+                <div class="actionCall">
+                    <canvas id="canvas"></canvas>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="about" class="about">
+            <div class="paperContainer">
+                <div class="paper paperOne"> </div>
+                <div class="paper paperTwo"> </div>
+                <div class="paper paperThree"> </div>
+                <div class="paper paperFour"> </div>
             </div>
             
-            <div class="actionCall">
-                <h3>Trabajemos Juntos!</h3>
-            </div>
-
-            <div class="square bottomSquare"> </div>
-
+            
         </section>
-        <section id="about" class="about">
 
-        </section>
         <section id="portfolio" class="portfolio">
-
+            <div class="projectContainer">
+                <div class="project projectOne"></div>
+                <div class="project projectTwo"></div>
+                <div class="project projectThree"></div>
+                <div class="project projectFour"></div>
+                <div class="project projectFive"></div>
+                <div class="project projectSix"></div>
+            </div>
         </section>
+
         <section id="contact" class="contact">
 
         </section>
@@ -72,8 +98,10 @@
     <footer>
             
     </footer>
+</div>
     <script src="index.js"></script>
     <script src="nav.js"></script>
     <script src="home.js"></script>
+    <script src="portfolio.js"></script>
 </body>
 </html>

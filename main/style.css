@@ -12,6 +12,11 @@
   --dark: #ff8882;
   --light: #e4d8dc;
   --lighter: #ffe3e3;
+
+  --first: 50;
+  --second: 49;
+  --third: 48;
+  --fourth: 47;
 }
 
 /*boiler plate over*/
@@ -279,71 +284,70 @@ body::-webkit-scrollbar {
 
 .about {
   width: 100vw;
-  height: 1400px;
+  height: 100vh;
   overflow: hidden;
 }
 
 .paperContainer {
   width: 100%;
-  height: 1400px;
+  height: 100%;
   overflow: hidden;
   position: relative;
 }
 .paper {
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   background-color: var(--light);
   box-shadow: 0px 3px 5px rgba(31, 52, 63, 0.5);
   font-size: 22px;
   font-family: "Handlee", cursive;
   padding: 10px;
 }
+
+.paper.active {
+  animation-name: slide;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
 .paperOne {
   position: absolute;
-  top: 150px;
+  top: 35%;
   left: 10%;
-  transform: rotate(25deg);
+  transform: rotate(5deg);
+  z-index: var(--first);
 }
 
 .paperTwo {
   position: absolute;
-  top: 350px;
-  right: 5%;
-  transform: rotate(-15deg);
-  z-index: 5;
+  top: 35%;
+  right: 10%;
+  transform: rotate(-10deg);
+  z-index: var(--second);
 }
-.paperTwo::after {
-  background-color: #ff8882;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-  content: " ";
-}
-.paperThree {
-  position: absolute;
-  top: 550px;
-  left: -15%;
-  transform: rotate(35deg);
-  z-index: -1;
-}
+
 .paperFour {
   position: absolute;
-  top: 650px;
+  top: 35%;
   left: 10%;
-  transform: rotate(25deg);
+  transform: rotate(-5deg);
+  z-index: var(--third);
 }
 .paperFive {
   position: absolute;
-  top: 900px;
+  top: 35%;
   right: 10%;
-  transform: rotate(15deg);
+  transform: rotate(10deg);
+  z-index: var(--fourth);
 }
-.paperSix {
-  position: absolute;
-  top: 850px;
-  right: -10%;
-  transform: rotate(-15deg);
-  z-index: -1;
+
+@keyframes slide {
+  50% {
+    transform: translateY(-400px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /*---------ABOUT SECTION OVER-------------*/

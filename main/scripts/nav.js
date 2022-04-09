@@ -10,26 +10,26 @@ const contact = document.querySelector("#li_contact")
 
 window.onscroll = function() {
     let y = window.scrollY;
-    let percentY = Math.floor((y*100)/window.innerHeight)
+    let percentY = parseInt((y*100)/window.innerHeight)
     if(percentY <= 99){
         mainNavLi.forEach(item=>{
             item.classList.remove('active')
         })
         home.classList.add('active')
     }
-    if(percentY > 70 && percentY <= 170){
+    if(percentY > 0 && percentY <= 110){
         mainNavLi.forEach(item=>{
             item.classList.remove('active')
         })
         about.classList.add('active')
     }
-    if(percentY > 171 && percentY <= 340){
+    if(percentY > 110 && percentY <= 198){
         mainNavLi.forEach(item=>{
             item.classList.remove('active')
         })
         portfolio.classList.add('active')
     }
-    if(percentY > 343){
+    if(percentY >=250){
         mainNavLi.forEach(item=>{
             item.classList.remove('active')
         })
@@ -39,8 +39,8 @@ window.onscroll = function() {
 //main nav menu selector
 
 mainNavLi.forEach(el=>{
-    el.addEventListener('click',()=>{
-        console.log('click on nav menu')
+    el.addEventListener('click',(ev)=>{
+        handleClick(ev)
         mainNavLi.forEach(item=>{
             item.classList.remove('active')
         })
@@ -48,7 +48,25 @@ mainNavLi.forEach(el=>{
     })
 })
 
-
+function handleClick(ev){
+    switch(ev.target.id){
+        case "buttonHome":
+            window.scrollTo(0,0)
+            return
+        case "buttonAbout":
+            window.scrollTo(0,(100*window.innerHeight)/100)
+            return
+        case "buttonPortfolio":
+            window.scrollTo(0,(200*window.innerHeight)/100)
+            return
+        case "buttonContact":
+            window.scrollTo(0,(300*window.innerHeight)/100)
+            return
+        default:
+            window.scrollTo(0,0)
+            return
+    }
+}
 
 
 })()

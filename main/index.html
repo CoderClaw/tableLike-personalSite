@@ -13,7 +13,7 @@
         setTimeout(function () {
         let viewheight = window.innerHeight;
         let viewport = document.querySelector("meta[name=viewport]");
-        viewport.setAttribute("content", "height=" + viewheight + "px, width=device-width , initial-scale=1.0");
+        window.innerWidth <500 && viewport.setAttribute("content", "height=" + viewheight + "px, width=device-width , initial-scale=1.0");
     }, 300);
     </script>
 </head>
@@ -23,11 +23,11 @@
     <div class="squareHome topSquare"> </div>
     <div class="squareHome bottomSquare"> </div>
 
-    <div class="squarePortfolio topSquare"> </div>
-    <div class="squarePortfolio bottomSquare"> </div>
-
     <div class="squareAbout topSquare"> </div>
-    <div class="squareAbout bottomSquare"> </div>
+    
+
+    
+    <div class="squarePortfolio bottomSquare"> </div>
 
     <div class="squareContact topSquare"> </div>
     <div class="squareContact bottomSquare"> </div>
@@ -35,18 +35,18 @@
     <!-- navigation -->
     <nav class="main_nav">
         <ul>
-            <li id="li_home" class="main_nav_li active"><a href="#home">
-                <div class="imgBox"><img src="../assets/cottage_black_24dp.svg" alt="Home"></div>
-            </a></li>
-            <li id="li_about" class="main_nav_li"><a href="#about">
-                <div class="imgBox"><img src="../assets/account_box_black_24dp.svg" alt="About"></div>
-            </a></li>
-            <li id="li_portfolio" class="main_nav_li"><a href="#portfolio">
-                <div class="imgBox"><img src="../assets/dashboard_black_24dp.svg" alt="My projects"></div>
-            </a></li>
-            <li id="li_contact" class="main_nav_li"><a href="#contact">
-                <div class="imgBox"><img src="../assets/connect_without_contact_black_24dp.svg" alt="Contact Me"></div>
-            </a></li>
+            <li id="li_home" class="main_nav_li active">
+                <div class="imgBox"><img src="../assets/cottage_black_24dp.svg" alt="Home"><div id="buttonHome"> </div></div>
+            </li>
+            <li id="li_about" class="main_nav_li">
+                <div class="imgBox"><img src="../assets/account_box_black_24dp.svg" alt="About"><div id="buttonAbout"> </div></div>
+            </li>
+            <li id="li_portfolio" class="main_nav_li">
+                <div class="imgBox"><img src="../assets/dashboard_black_24dp.svg" alt="My projects"><div id="buttonPortfolio"> </div></div>
+            </li>
+            <li id="li_contact" class="main_nav_li">
+                <div class="imgBox"><img src="../assets/connect_without_contact_black_24dp.svg" alt="Contact Me"><div id="buttonContact"> </div></div>
+            </li>
         </ul>
     </nav>
     <!-- main body -->

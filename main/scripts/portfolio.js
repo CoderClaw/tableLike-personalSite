@@ -22,20 +22,48 @@
                 el.classList.remove('backwardsRight')
                 removeChilds(el)
             })
-            
-            if(project.classList[1] === "projectOne" || project.classList[1] === "projectThree" || project.classList[1] === "projectFive"){
-                project.classList.add('forwardsLeft')
-                project.classList.add('active')
-                project.nextElementSibling && project.nextElementSibling.classList.add('backwardsRight')
-                project.previousElementSibling && project.previousElementSibling.classList.add('backwardsRight')
-                addChilds(project)
+
+            if(window.innerWidth <= 400){
+                if(project.classList[1] === "projectOne" || project.classList[1] === "projectThree" || project.classList[1] === "projectFive"){
+                    project.classList.add('forwardsLeft')
+                    project.classList.add('active')
+                    project.nextElementSibling && project.nextElementSibling.classList.add('backwardsRight')
+                    project.previousElementSibling && project.previousElementSibling.classList.add('backwardsRight')
+                    addChilds(project)
+                }else{
+                    project.classList.add('forwardsRight')
+                    project.classList.add('active')
+                    project.nextElementSibling && project.nextElementSibling.classList.add('backwardsLeft')
+                    project.previousElementSibling && project.previousElementSibling.classList.add('backwardsLeft')
+                    addChilds(project)
+                }
             }else{
-                project.classList.add('forwardsRight')
-                project.classList.add('active')
-                project.nextElementSibling && project.nextElementSibling.classList.add('backwardsLeft')
-                project.previousElementSibling && project.previousElementSibling.classList.add('backwardsLeft')
-                addChilds(project)
+                if(project.classList[1] === "projectOne" || project.classList[1] === "projectFive"){
+                    project.classList.add('forwardsLeft')
+                    project.classList.add('active')
+                    project.nextElementSibling && project.nextElementSibling.classList.add('backwardsRight')
+                    project.previousElementSibling && project.previousElementSibling.classList.add('backwardsRight')
+                    addChilds(project)
+                }else if(project.classList[1] === "projectThree"){
+                    project.classList.add('forwardsLeft')
+                    project.classList.add('active')
+                    project.previousElementSibling && project.previousElementSibling.classList.add('backwardsRight')
+                    addChilds(project)
+                }else if(project.classList[1] === "projectFour"){
+                    project.classList.add('forwardsRight')
+                    project.classList.add('active')
+                    project.nextElementSibling && project.nextElementSibling.classList.add('backwardsLeft')
+                    addChilds(project)
+                }else{
+                    project.classList.add('forwardsRight')
+                    project.classList.add('active')
+                    project.nextElementSibling && project.nextElementSibling.classList.add('backwardsLeft')
+                    project.previousElementSibling && project.previousElementSibling.classList.add('backwardsLeft')
+                    addChilds(project)
+                }
             }
+            
+            
             
         })
     })

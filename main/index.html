@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/css-doodle@0.26.4/css-doodle.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="landscape.css">
     <link rel="shortcut icon" href="#" type="image/x-icon">
@@ -20,17 +21,17 @@
 <body>
     <!-- background elements and animation -->
 <div class="container">
-    <div class="squareHome topSquare"> </div>
-    <div class="squareHome bottomSquare"> </div>
+    <div class="squareHome topSquare"><css-doodle use="var(--pattern-4)"></css-doodle></div>
+    <div class="squareHome bottomSquare"><css-doodle use="var(--pattern-4)"></css-doodle> </div>
 
-    <div class="squareAbout topSquare"> </div>
+    <div class="squareAbout topSquare"><css-doodle use="var(--pattern-4)"></css-doodle></div>
     
 
     
-    <div class="squarePortfolio bottomSquare"> </div>
+    <div class="squarePortfolio bottomSquare"> <css-doodle use="var(--pattern-4)"></css-doodle></div>
 
-    <div class="squareContact topSquare"> </div>
-    <div class="squareContact bottomSquare"> </div>
+    <div class="squareContact topSquare"><css-doodle use="var(--pattern-4)"></css-doodle> </div>
+    <div class="squareContact bottomSquare"><css-doodle use="var(--pattern-4)"></css-doodle> </div>
 
     <!-- navigation -->
     <nav class="main_nav">
@@ -55,13 +56,19 @@
             <div class="switcher">
                 <a href="./indexEng.html">Esp</a>
             </div>
+
             <div class="presentation">
-                <h1>Lucas Beaufils</h1>
+                <div class="laptopContainer">
+                    <div class="laptop-top">
+                        <div class="logoContainer">
+                            <div class="logoCenter"></div>
+                            <div class="logoRight"></div>
+                        </div>
+                    </div>
+                    
+                </div>
                 
             </div>
-            <div class="languageSwitch">
-            </div>
-
             <div class="flippingContainer" id="flippingContainer">
                 <div class="imgBox" id="profilePicContainer">
                     <img 

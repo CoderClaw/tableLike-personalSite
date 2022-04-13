@@ -123,6 +123,34 @@ body::-webkit-scrollbar {
   right: -25vw;
 }
 
+css-doodle{
+  --pattern-4: (
+@grid: 1 / 100%;
+background-color: var(var(--lighter));
+background-image: @doodle(
+:doodle {
+@grid: 1 / 10000px;
+transform: scale(1.5) rotate(45deg);
+}
+background-size: 50px 50px;
+background-image: @doodle(
+:doodle {
+@grid: 8x1 / 90%;
+border-radius: 0% 60%;
+overflow: hidden;
+}
+position: absolute;
+border: 1px solid green;
+@nth(1) { border-radius: 0% 60%; }
+@size: calc(100% - 100% / @I * (@i - 1));
+background: linear-gradient(
+45deg, @stripe(transparent, green 1px, transparent)
+);
+);
+);
+);
+}
+
 /*----------MAIN NAV STYLES----------*/
 
 .main_nav {
